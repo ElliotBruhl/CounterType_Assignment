@@ -6,7 +6,10 @@ CounterType::CounterType() {
   counter = 0;
 }
 CounterType::CounterType(int value) {
-  counter = value;
+  if (value >= 0 && value <= INT_MAX)
+    counter = value;
+  else
+    counter = 0;
 }
 void CounterType::resetCounter() {
   counter = 0;
